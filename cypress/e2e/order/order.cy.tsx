@@ -1,4 +1,6 @@
 ///<reference types="cypress"/>
+import { SELECTORS } from '../../../src/services/constants';
+
 //проверка создания заказа
 describe('Order test', function () {
     this.beforeEach(function() {
@@ -32,7 +34,7 @@ describe('Order test', function () {
     //Клик на кнопку заказа
     cy.get('[data-cy=order_button]').contains('Оформить заказ').should('exist').click();
 
-    //Проверка открытия модального окна и номера заказа после успешного создания заказа 
+    //Проверка открытия модального окна и номера заказа после успешного создания заказа
     cy.get('[data-cy=order_number]').contains('2128506').should('exist');
 
     //Проверка закрытия модального окна при клике на крестик
@@ -41,7 +43,7 @@ describe('Order test', function () {
 
     //Проверка очищения конструктора от ингредиентов
     cy.get('[data-cy=constructor]').should('not.contain', 'Ингридиент_1');
-    cy.get('[data-cy=ingredient_constructor]').should('not.contain', 'Ингридиент_4');
-    cy.get('[data-cy=ingredient_constructor]').should('not.contain', 'Ингридиент_2');
+    cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).should('not.contain', 'Ингридиент_4');
+    cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).should('not.contain', 'Ингридиент_2');
    })
 })

@@ -1,4 +1,4 @@
-//These tests check the burger constructor reducers
+// These tests check the burger constructor reducers
 
 import {
   addIngredient,
@@ -9,10 +9,11 @@ import {
 } from './BurgerConstructorSlice';
 
 import burgerConstructorSlice from './BurgerConstructorSlice';
+import initialState from './BurgerConstructorSlice';
 
 import { TConstructorIngredient } from '@utils-types';
 
-describe('Constructor slice tests ', () => {
+describe('Constructor slice tests', () => {
   const ingredient1: TConstructorIngredient = {
     id: '1',
     _id: '1',
@@ -57,19 +58,9 @@ describe('Constructor slice tests ', () => {
     image_mobile: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
     image_large: 'https://code.s3.yandex.net/react/code/bun-02-large.png'
   };
-  //тест добавление ингредиента в конструктор
-  it('addIngredient should add ingredient into constructor', () => {
-    const initialState = {
-      constructorItems: {
-        bun: null,
-        ingredients: []
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
-    };
 
+  // тест добавления ингредиента в конструктор
+  it('addIngredient should add ingredient into constructor', () => {
     const newState = burgerConstructorSlice.reducer(
       initialState,
       addIngredient(ingredient1)
@@ -78,22 +69,12 @@ describe('Constructor slice tests ', () => {
     expect(newState.constructorItems.ingredients).toHaveLength(1);
     expect(newState.constructorItems.ingredients[0]).toEqual({
       ...ingredient1,
-      id: expect.any(String) //проверка, что значение id - тип данных строка
+      id: expect.any(String) // проверка, что значение id - тип данных строка
     });
   });
-  //тест добавления булки в конструктор
-  it('addIngredient should add bun into constructor', () => {
-    const initialState = {
-      constructorItems: {
-        bun: null,
-        ingredients: []
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
-    };
 
+  // тест добавления булки в конструктор
+  it('addIngredient should add bun into constructor', () => {
     const newState = burgerConstructorSlice.reducer(
       initialState,
       addIngredient(bun)
@@ -105,21 +86,18 @@ describe('Constructor slice tests ', () => {
     });
   });
 
-  //тест удаления ингредиента
+  // тест удаления ингредиента
   it('removeIngredient should remove ingredient from constructor', () => {
-    const initialState = {
+    const stateWithIngredients = {
+      ...initialState,
       constructorItems: {
-        bun: bun,
+        bun,
         ingredients: [ingredient1, ingredient2]
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
+      }
     };
 
     const newState = burgerConstructorSlice.reducer(
-      initialState,
+      stateWithIngredients,
       removeIngredient(ingredient1)
     );
 
@@ -130,78 +108,69 @@ describe('Constructor slice tests ', () => {
     });
   });
 
-  //тест изменения порядка ингредиентов в конструкторе - перемещение инг-та вверх
+  // тест изменения порядка ингредиентов - перемещение вверх
   it('moveUpIngredient should MOVE UP ingredient within constructor', () => {
-    const initialState = {
+    const stateWithIngredients = {
+      ...initialState,
       constructorItems: {
-        bun: bun,
+        bun,
         ingredients: [ingredient1, ingredient2]
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
+      }
     };
 
     const newState = burgerConstructorSlice.reducer(
-      initialState,
-      moveUpIngredient(1) //передаем индекс элемента в массиве, который нужно переместить вверх. Негативный тест - индекс == 0, в этом случае тест == failed, так как элемент с 0 индексом двигать вверх нельзя
+      stateWithIngredients,
+      moveUpIngredient(1)
     );
-    // Ожидаем, что ingredient2 переместится на позицию ingredient1
+
     expect(newState.constructorItems.ingredients[0]).toEqual({
       ...ingredient2,
       id: expect.any(String)
     });
-    // Ожидаем, что ingredient1 переместится на позицию ingredient2
+
     expect(newState.constructorItems.ingredients[1]).toEqual({
       ...ingredient1,
       id: expect.any(String)
     });
   });
 
-  //тест на перемещение ингредиента вниз
+  // тест изменения порядка ингредиентов - перемещение вниз
   it('moveDownIngredient should MOVE DOWN ingredient within constructor', () => {
-    const initialState = {
+    const stateWithIngredients = {
+      ...initialState,
       constructorItems: {
-        bun: bun,
+        bun,
         ingredients: [ingredient1, ingredient2]
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
+      }
     };
 
     const newState = burgerConstructorSlice.reducer(
-      initialState,
-      moveDownIngredient(0) //передаем индекс элемента в массиве, который нужно переместить вниз.
+      stateWithIngredients,
+      moveDownIngredient(0)
     );
-    // Ожидаем, что ingredient1 переместится на позицию ingredient2
+
     expect(newState.constructorItems.ingredients[1]).toEqual({
       ...ingredient1,
       id: expect.any(String)
     });
-    // Ожидаем, что ingredient2 переместится на позицию ingredient1
+
     expect(newState.constructorItems.ingredients[0]).toEqual({
       ...ingredient2,
       id: expect.any(String)
     });
   });
 
-  //тест очищения конструктора
+  // тест очищения конструктора
   it('clearOrder should clear constructor', () => {
-    const initialState = {
+    const stateWithIngredients = {
+      ...initialState,
       constructorItems: {
-        bun: bun,
+        bun,
         ingredients: [ingredient1, ingredient2]
-      },
-      orderRequest: false,
-      orderModalData: null,
-      loading: false,
-      error: null
+      }
     };
 
-    const newState = burgerConstructorSlice.reducer(initialState, clearOrder());
+    const newState = burgerConstructorSlice.reducer(stateWithIngredients, clearOrder());
 
     expect(newState.constructorItems).toEqual({
       bun: null,

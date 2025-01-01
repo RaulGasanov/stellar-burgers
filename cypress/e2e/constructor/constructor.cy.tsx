@@ -1,3 +1,5 @@
+import { SELECTORS } from '../../../src/services/constants';
+
 describe('Constructor page test', function () {
     this.beforeEach(function() {
         cy.intercept('GET', 'api/ingredients', {fixture: 'ingredients.json'});
@@ -15,11 +17,11 @@ describe('Constructor page test', function () {
 
 //тест добавления ингредиентов в конструктор при клике на кнопку
     it('Test of adding main ingredients', function () {
-        cy.get('[data-cy=ingredient_constructor]').contains('Ингредиент_2').should('not.exist');
-        cy.get('[data-cy=ingredient_constructor]').contains('Ингредиент_4').should('not.exist');
+        cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).contains('Ингредиент_2').should('not.exist');
+        cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).contains('Ингредиент_4').should('not.exist');
         cy.get('[data-cy=main_ingredients]').contains('Добавить').click();
-        cy.get('[data-cy=ingredient_constructor]').contains('Ингредиент_2').should('exist');
+        cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).contains('Ингредиент_2').should('exist');
         cy.get('[data-cy=souce_ingredients]').contains('Добавить').click();
-        cy.get('[data-cy=ingredient_constructor]').contains('Ингридиент_4').should('exist');
+        cy.get(SELECTORS.INGREDIENT_CONSTRUCTOR).contains('Ингридиент_4').should('exist');
     })
 })
