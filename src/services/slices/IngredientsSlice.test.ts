@@ -6,12 +6,7 @@ import ingredientsSlice, {
   TStateIngredients
 } from './IngredientsSlice';
 
-//инициализация начального состояния,  будет использоваться редьюсером перед применением экшена. Вынесли в глобальную переменную для удобства использования во всех блоках it
-const initialState: TStateIngredients = {
-  ingredients: [],
-  loading: false,
-  error: null
-};
+import { initialState } from './IngredientsSlice';
 
 //глобальная переменная с тестовым ингредиентом для удобства использования во всех блоках it
 const testIngredient = [

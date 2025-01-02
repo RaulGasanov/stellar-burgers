@@ -8,15 +8,7 @@ import {
   feedDataSlice
 } from './FeedDataSlice';
 
-// Начальное состояние для тестов, вынесенное в глобальную переменную для общего доступа
-const initialState: TStateFeed = {
-  orders: [],
-  total: 0,
-  totalToday: 0,
-  error: null,
-  loading: false,
-  modalOrder: null
-};
+import { initialState } from './FeedDataSlice';
 
 //Тестовые данные заказов для использования в тестах, в глобальной переменной для общего доступа
 const testOrders = {

@@ -198,3 +198,5 @@ export const {
   selectIsAuthChecked,
   selectloginUserRequest
 } = userStateSlice.selectors;
+
+export { initialState };

@@ -6,13 +6,7 @@ import {
   userOrdersHistorySlice
 } from './UserOrdersHistory';
 
-// Начальное состояние для тестов, вынесенное в глобальную переменную для общего доступа
-
-const initialState: TStateOrdersHistory = {
-  orders: [],
-  loading: false,
-  error: null
-};
+import { initialState } from './UserOrdersHistory';
 
 //Тестовые данные заказов для использования в тестах, в глобальной переменной для общего доступа
 const testOrders = {

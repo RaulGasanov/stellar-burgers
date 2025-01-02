@@ -52,3 +52,5 @@ export const {
   getUserOrdersHistoryError,
   getUserOrdersLoading
 } = userOrdersHistorySlice.selectors;
+
+export { initialState };

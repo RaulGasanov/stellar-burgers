@@ -1,5 +1,3 @@
-// These tests check the burger constructor reducers
-
 import {
   addIngredient,
   removeIngredient,
@@ -9,7 +7,7 @@ import {
 } from './BurgerConstructorSlice';
 
 import burgerConstructorSlice from './BurgerConstructorSlice';
-import initialState from './BurgerConstructorSlice';
+import { initialState } from './BurgerConstructorSlice';
 
 import { TConstructorIngredient } from '@utils-types';
 
@@ -93,7 +91,11 @@ describe('Constructor slice tests', () => {
       constructorItems: {
         bun,
         ingredients: [ingredient1, ingredient2]
-      }
+      },
+      orderRequest: false,
+      orderModalData: null,
+      loading: false,
+      error: null
     };
 
     const newState = burgerConstructorSlice.reducer(
@@ -115,7 +117,11 @@ describe('Constructor slice tests', () => {
       constructorItems: {
         bun,
         ingredients: [ingredient1, ingredient2]
-      }
+      },
+      orderRequest: false,
+      orderModalData: null,
+      loading: false,
+      error: null
     };
 
     const newState = burgerConstructorSlice.reducer(
@@ -141,7 +147,11 @@ describe('Constructor slice tests', () => {
       constructorItems: {
         bun,
         ingredients: [ingredient1, ingredient2]
-      }
+      },
+      orderRequest: false,
+      orderModalData: null,
+      loading: false,
+      error: null
     };
 
     const newState = burgerConstructorSlice.reducer(
@@ -167,10 +177,17 @@ describe('Constructor slice tests', () => {
       constructorItems: {
         bun,
         ingredients: [ingredient1, ingredient2]
-      }
+      },
+      orderRequest: false,
+      orderModalData: null,
+      loading: false,
+      error: null
     };
 
-    const newState = burgerConstructorSlice.reducer(stateWithIngredients, clearOrder());
+    const newState = burgerConstructorSlice.reducer(
+      stateWithIngredients,
+      clearOrder()
+    );
 
     expect(newState.constructorItems).toEqual({
       bun: null,

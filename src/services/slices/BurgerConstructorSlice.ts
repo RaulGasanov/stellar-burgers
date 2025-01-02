@@ -133,3 +133,5 @@ export const {
   moveDownIngredient,
   clearOrder
 } = burgerConstructorSlice.actions;
+
+export { initialState };

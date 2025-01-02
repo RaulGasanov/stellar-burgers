@@ -87,3 +87,5 @@ export const {
   getLoading,
   getError
 } = feedDataSlice.selectors;
+
+export { initialState };

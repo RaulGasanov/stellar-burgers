@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1735670819306" clover="3.2.0">
-  <project timestamp="1735670819306" name="All files">
-    <metrics statements="852" coveredstatements="625" conditionals="49" coveredconditionals="41" methods="52" coveredmethods="14" elements="953" coveredelements="680" complexity="0" loc="852" ncloc="852" packages="3" files="8" classes="8"/>
+<coverage generated="1735826647609" clover="3.2.0">
+  <project timestamp="1735826647609" name="All files">
+    <metrics statements="862" coveredstatements="635" conditionals="49" coveredconditionals="41" methods="52" coveredmethods="14" elements="963" coveredelements="690" complexity="0" loc="862" ncloc="862" packages="3" files="8" classes="8"/>
     <package name="services">
       <metrics statements="40" coveredstatements="40" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
       <file name="store.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/store.ts">
@@ -49,9 +49,9 @@
       </file>
     </package>
     <package name="services.slices">
-      <metrics statements="530" coveredstatements="464" conditionals="45" coveredconditionals="38" methods="33" coveredmethods="12"/>
+      <metrics statements="540" coveredstatements="474" conditionals="45" coveredconditionals="38" methods="33" coveredmethods="12"/>
       <file name="BurgerConstructorSlice.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/slices/BurgerConstructorSlice.ts">
-        <metrics statements="135" coveredstatements="123" conditionals="9" coveredconditionals="9" methods="12" coveredmethods="7"/>
+        <metrics statements="137" coveredstatements="125" conditionals="9" coveredconditionals="9" methods="12" coveredmethods="7"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -187,9 +187,11 @@
         <line num="133" count="1" type="stmt"/>
         <line num="134" count="1" type="stmt"/>
         <line num="135" count="1" type="stmt"/>
+        <line num="136" count="1" type="stmt"/>
+        <line num="137" count="1" type="stmt"/>
       </file>
       <file name="FeedDataSlice.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/slices/FeedDataSlice.ts">
-        <metrics statements="89" coveredstatements="82" conditionals="9" coveredconditionals="7" methods="7" coveredmethods="1"/>
+        <metrics statements="91" coveredstatements="84" conditionals="9" coveredconditionals="7" methods="7" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -279,9 +281,11 @@
         <line num="87" count="1" type="stmt"/>
         <line num="88" count="1" type="stmt"/>
         <line num="89" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="91" count="1" type="stmt"/>
       </file>
       <file name="IngredientsSlice.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/slices/IngredientsSlice.ts">
-        <metrics statements="52" coveredstatements="49" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1"/>
+        <metrics statements="54" coveredstatements="51" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -334,9 +338,11 @@
         <line num="50" count="1" type="stmt"/>
         <line num="51" count="1" type="stmt"/>
         <line num="52" count="1" type="stmt"/>
+        <line num="53" count="1" type="stmt"/>
+        <line num="54" count="1" type="stmt"/>
       </file>
       <file name="UserInfoSlice.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/slices/UserInfoSlice.ts">
-        <metrics statements="200" coveredstatements="156" conditionals="18" coveredconditionals="14" methods="7" coveredmethods="2"/>
+        <metrics statements="202" coveredstatements="158" conditionals="18" coveredconditionals="14" methods="7" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -537,9 +543,11 @@
         <line num="198" count="1" type="stmt"/>
         <line num="199" count="1" type="stmt"/>
         <line num="200" count="1" type="stmt"/>
+        <line num="201" count="1" type="stmt"/>
+        <line num="202" count="1" type="stmt"/>
       </file>
       <file name="UserOrdersHistory.ts" path="/Users/raul_gasanov/Desktop/Education/Practicum/stellar-burgers/src/services/slices/UserOrdersHistory.ts">
-        <metrics statements="54" coveredstatements="54" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="1"/>
+        <metrics statements="56" coveredstatements="56" conditionals="5" coveredconditionals="4" methods="4" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -594,6 +602,8 @@
         <line num="52" count="1" type="stmt"/>
         <line num="53" count="1" type="stmt"/>
         <line num="54" count="1" type="stmt"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
       </file>
     </package>
     <package name="utils">

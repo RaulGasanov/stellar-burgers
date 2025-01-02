@@ -50,3 +50,5 @@ const ingredientsSlice = createSlice({
 export default ingredientsSlice;
 export const { getIngredientsWithSelector, getLoadingStatus } =
   ingredientsSlice.selectors;
+
+export { initialState };

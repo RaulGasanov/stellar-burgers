@@ -10,13 +10,7 @@ import {
   authChecked
 } from './UserInfoSlice';
 
-const initialState: TStateUser = {
-  isAuthChecked: false,
-  isAuthenticated: false,
-  user: null,
-  loginUserError: null,
-  loginUserRequest: false
-};
+import { initialState } from './UserInfoSlice';
 
 const testUser = {
   success: true,

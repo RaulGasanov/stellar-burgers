@@ -9,13 +9,13 @@ import { Link } from 'react-router-dom';
 import { ResetPasswordUIProps } from './type';
 
 export const ResetPasswordUI: FC<ResetPasswordUIProps> = ({
-                                                            errorText,
-                                                            password,
-                                                            setPassword,
-                                                            handleSubmit,
-                                                            token,
-                                                            setToken
-                                                          }) => (
+  errorText,
+  password,
+  setPassword,
+  handleSubmit,
+  token,
+  setToken
+}) => (
   <main className={styles.container}>
     <div className={`pt-6 ${styles.wrapCenter}`}>
       <h3 className='pb-6 text text_type_main-medium'>Восстановление пароля</h3>
